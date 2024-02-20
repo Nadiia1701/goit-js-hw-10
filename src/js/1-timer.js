@@ -88,12 +88,17 @@ class Timer {
       this.onTick(time);
       if (delta <= 0) {
         this.stop();
+        showdays.textContent = '00';
+        showhours.textContent = '00';
+        showminutes.textContent = '00';
+        showseconds.textContent = '00';
       }
     }, 1000);
   }
 
   stop() {
     clearInterval(this.interval);
+    inputfield.disabled = false;
   }
 
   pad(value) {
